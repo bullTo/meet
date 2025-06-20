@@ -7,7 +7,7 @@
 
 JW Nexus is an open source video conferencing app built on [LiveKit Components](https://github.com/livekit/components-js), [LiveKit Cloud](https://cloud.livekit.io/), and Next.js. It's been completely redesigned from the ground up using our new components library.
 
-![JW Nexus screenshot](./.github/assets/livekit-meet.jpg)
+
 
 ## Tech Stack
 
