@@ -3,7 +3,11 @@
 import { useRouter, useSearchParams } from 'next/navigation';
 import React, { Suspense, useState } from 'react';
 import { encodePassphrase, generateRoomId, randomString } from '@/lib/client-utils';
+import Image from 'next/image';
+import clsx from 'clsx';
 
+import ConferenceSpectrumImg from '../public/images/conference spectrum.svg';
+import conferenceIcon from '../public/images/icons/conference.svg';
 import styles from '../styles/Home.module.css';
 
 function Tabs(props: React.PropsWithChildren<{}>) {
@@ -54,11 +58,16 @@ function DemoMeetingTab(props: { label: string }) {
     }
   };
   return (
-    <div className={styles.tabContent}>
-      <p style={{ margin: 0 }}>Try JW Nexus for free with our live demo project.</p>
-      <button style={{ marginTop: '1rem' }} className="lk-button" onClick={startMeeting}>
-        Start Meeting
+    <div
+      className={clsx(
+        'flex flex-col justify-center items-center w-full border border-gray-700 p-6 rounded-[20px] gap-5',
+      )}
+    >
+      <Image src={conferenceIcon} alt="Conference icon" width={100} height={100} />
+      <button className="lk-button" onClick={startMeeting}>
+        Start Conference
       </button>
+      <Image src={ConferenceSpectrumImg} alt="Conference spectrum" width={200} height={200} />
       {/* <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         <div style={{ display: 'flex', flexDirection: 'row', gap: '1rem' }}>
           <input
