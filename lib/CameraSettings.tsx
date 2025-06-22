@@ -8,13 +8,12 @@ import {
 } from '@livekit/components-react';
 import { BackgroundBlur, VirtualBackground } from '@livekit/track-processors';
 import { isLocalTrack, LocalTrackPublication, Track } from 'livekit-client';
-import Desk from '../public/bg-1.jpg';
-import Nature from '../public/background-images/bg-2.jpg';
-
+import DeskBg from '../public/background-images/bg-1.jpg';
+import NatureBg from '../public/background-images/bg-2.jpg';
 // Background image paths
 const BACKGROUND_IMAGES = [
-  { name: 'Desk', path: Desk },
-  { name: 'Nature', path: Nature },
+  { name: 'Desk', path: DeskBg },
+  { name: 'Nature', path: NatureBg },
 ];
 
 // Background options
