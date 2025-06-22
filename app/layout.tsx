@@ -6,11 +6,10 @@ import { Toaster } from 'react-hot-toast';
 
 export const metadata: Metadata = {
   title: {
-    default: 'JW Nexus | Conference app build with LiveKit open source',
+    default: 'JW Nexus',
     template: '%s',
   },
-  description:
-    'LiveKit is an open source WebRTC project that gives you everything needed to build scalable and real-time audio and/or video experiences in your applications.',
+  description: 'JW Nexus Session application built with LiveKit Components and Next.js.',
   twitter: {
     creator: '@livekitted',
     site: '@livekitted',
