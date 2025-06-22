@@ -3,6 +3,7 @@
 import { useRouter, useSearchParams } from 'next/navigation';
 import React, { Suspense, useState } from 'react';
 import { encodePassphrase, generateRoomId, randomString } from '@/lib/client-utils';
+
 import styles from '../styles/Home.module.css';
 
 function Tabs(props: React.PropsWithChildren<{}>) {
@@ -58,7 +59,7 @@ function DemoMeetingTab(props: { label: string }) {
       <button style={{ marginTop: '1rem' }} className="lk-button" onClick={startMeeting}>
         Start Meeting
       </button>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      {/* <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         <div style={{ display: 'flex', flexDirection: 'row', gap: '1rem' }}>
           <input
             id="use-e2ee"
@@ -79,7 +80,7 @@ function DemoMeetingTab(props: { label: string }) {
             />
           </div>
         )}
-      </div>
+      </div> */}
     </div>
   );
 }
@@ -165,13 +166,15 @@ export default function Page() {
     <>
       <main className={styles.main} data-lk-theme="default">
         <div className="header">
-          <h1 className="text-[100px]">JW Nexus</h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent drop-shadow-lg text-center py-2">
+            JW Nexus
+          </h1>
         </div>
         <Suspense fallback="Loading">
-          <Tabs>
-            <DemoMeetingTab label="Demo" />
-            <CustomConnectionTab label="Custom" />
-          </Tabs>
+          {/* <Tabs> */}
+          <DemoMeetingTab label="Demo" />
+          {/* <CustomConnectionTab label="Custom" /> */}
+          {/* </Tabs> */}
         </Suspense>
       </main>
       <footer data-lk-theme="default">JW Nexus {new Date().getFullYear()} | Session </footer>
