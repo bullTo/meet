@@ -23,6 +23,9 @@ importers:
       '@livekit/track-processors':
         specifier: ^0.5.4
         version: 0.5.7(@types/dom-mediacapture-transform@0.1.11)(livekit-client@2.13.6(@types/dom-mediacapture-record@1.0.22))
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
       livekit-client:
         specifier: 2.13.6
         version: 2.13.6(@types/dom-mediacapture-record@1.0.22)
