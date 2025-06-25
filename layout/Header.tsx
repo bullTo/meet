@@ -10,7 +10,7 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full bg-gradient-to-r from-gray-900 via-slate-900 to-gray-800 shadow-lg">
+    <header className="w-full bg-gradient-to-r from-gray-900 via-slate-900 to-gray-800 shadow-lg absolute top-0 left-0 z-50 text-white">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 md:py-5">
         {/* Logo / Title */}
         <div className="flex items-center">
