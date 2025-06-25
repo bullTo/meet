@@ -3,6 +3,11 @@
 import { useRouter, useSearchParams } from 'next/navigation';
 import React, { Suspense, useState } from 'react';
 import { encodePassphrase, generateRoomId, randomString } from '@/lib/client-utils';
+import Image from 'next/image';
+import clsx from 'clsx';
+
+import ConferenceSpectrumImg from '../public/images/conference spectrum.svg';
+import conferenceIcon from '../public/images/icons/conference.svg';
 import styles from '../styles/Home.module.css';
 
 function Tabs(props: React.PropsWithChildren<{}>) {
@@ -53,12 +58,17 @@ function DemoMeetingTab(props: { label: string }) {
     }
   };
   return (
-    <div className={styles.tabContent}>
-      <p style={{ margin: 0 }}>Try JW Nexus for free with our live demo project.</p>
-      <button style={{ marginTop: '1rem' }} className="lk-button" onClick={startMeeting}>
-        Start Meeting
+    <div
+      className={clsx(
+        'flex flex-col justify-center items-center w-full border border-gray-700 p-6 rounded-[20px] gap-5',
+      )}
+    >
+      <Image src={conferenceIcon} alt="Conference icon" width={100} height={100} />
+      <button className="lk-button" onClick={startMeeting}>
+        Start Conference
       </button>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <Image src={ConferenceSpectrumImg} alt="Conference spectrum" width={200} height={200} />
+      {/* <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         <div style={{ display: 'flex', flexDirection: 'row', gap: '1rem' }}>
           <input
             id="use-e2ee"
@@ -79,7 +89,7 @@ function DemoMeetingTab(props: { label: string }) {
             />
           </div>
         )}
-      </div>
+      </div> */}
     </div>
   );
 }
@@ -165,37 +175,18 @@ export default function Page() {
     <>
       <main className={styles.main} data-lk-theme="default">
         <div className="header">
-          <img src="/images/livekit-meet-home.svg" alt="JW Nexus" width="360" height="45" />
-          <h2>
-            Open source video conferencing app built on{' '}
-            <a href="https://github.com/livekit/components-js?ref=meet" rel="noopener">
-              LiveKit&nbsp;Components
-            </a>
-            ,{' '}
-            <a href="https://livekit.io/cloud?ref=meet" rel="noopener">
-              LiveKit&nbsp;Cloud
-            </a>{' '}
-            and Next.js.
-          </h2>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent drop-shadow-lg text-center py-2">
+            JW Nexus
+          </h1>
         </div>
         <Suspense fallback="Loading">
-          <Tabs>
-            <DemoMeetingTab label="Demo" />
-            <CustomConnectionTab label="Custom" />
-          </Tabs>
+          {/* <Tabs> */}
+          <DemoMeetingTab label="Demo" />
+          {/* <CustomConnectionTab label="Custom" /> */}
+          {/* </Tabs> */}
         </Suspense>
       </main>
-      <footer data-lk-theme="default">
-        Hosted on{' '}
-        <a href="https://livekit.io/cloud?ref=meet" rel="noopener">
-          LiveKit Cloud
-        </a>
-        . Source code on{' '}
-        <a href="https://github.com/livekit/meet?ref=meet" rel="noopener">
-          GitHub
-        </a>
-        .
-      </footer>
+      <footer data-lk-theme="default">JW Nexus {new Date().getFullYear()} | Session </footer>
     </>
   );
 }
